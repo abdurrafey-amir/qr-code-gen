@@ -48,6 +48,12 @@
 	padding: 1rem 1.5rem;
 	cursor: pointer;
 	border-radius: 0.5rem;
+	
+	.generated {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	</style>
 </head>
 <body>
@@ -58,3 +64,12 @@
 <form action="/" method="POST">
 	<input type="text" name="link">
 	<button type="submit">Generate QR</button>
+</form>
+{% if data %}
+<div class='generated'>
+	<img src='{{data}}' alt='' />
+	<p>Here js the QR code.</p>
+</div>
+{% endif %}
+</body>
+</html>
